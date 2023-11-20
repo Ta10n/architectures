@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-17T10:04:11.381Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="Q4QQl7KC80R3W9qm3hlw" version="22.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-20T08:02:57.427Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="UsyKi2BiDuCugiE_5Wib" version="22.1.2" type="github">
   <diagram name="第 1 页" id="exQQPddznj57JsKQ9eLf">
     <mxGraphModel dx="2261" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -387,6 +387,114 @@
         </mxCell>
         <mxCell id="TXQwF1Fj1RK-C48ThL0Z-133" value="创建listen fd，开始提供服务" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="-180" y="2020" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-138" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-134" target="TXQwF1Fj1RK-C48ThL0Z-137">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-134" value="manager::listenFd" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="2560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-135" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-115" y="2589.5" as="sourcePoint" />
+            <mxPoint x="-55" y="2589.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-136" value="request" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-250" y="2560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-140" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-137" target="TXQwF1Fj1RK-C48ThL0Z-139">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-137" value="Dispatcher::IoCallback()" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="2560" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-142" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-139" target="TXQwF1Fj1RK-C48ThL0Z-141">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-139" value="manager::m_dispatcher::OnIoRead()" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="380" y="2560" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-144" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-141" target="TXQwF1Fj1RK-C48ThL0Z-143">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-141" value="manager::m_dispatcher::AcceptFdAndTransfer()" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="357.5" y="2700" width="295" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-146" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-143" target="TXQwF1Fj1RK-C48ThL0Z-145">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-143" value="manager::m_dispatcher::RoundRobinTransfer()" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="2700" width="290" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-148" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-145" target="TXQwF1Fj1RK-C48ThL0Z-147">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-145" value="构建CMD_REQ_FD_TRANSFER请求，发送给挑选到的worker" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-255" y="2700" width="225" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-150" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-147" target="TXQwF1Fj1RK-C48ThL0Z-149">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-147" value="通过LaborShared找到manager和worker通信的channel，触发async事件" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-248.75" y="2810" width="212.5" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-152" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-149" target="TXQwF1Fj1RK-C48ThL0Z-151">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-149" value="Dispatcher::AsyncCallback()" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="2800" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-154" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-151" target="TXQwF1Fj1RK-C48ThL0Z-153">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-151" value="CodecFactory::OnEvent()&lt;br&gt;读取请求头和请求体，通过worker自己的ActorBuilder找到命令字的处理器，执行处理器的AnyMessage()" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="365" y="2800" width="285" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-156" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-153" target="TXQwF1Fj1RK-C48ThL0Z-155">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-153" value="CmdFdTransfer::AnyMessage()" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="396.25" y="2893" width="222.5" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-158" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-155" target="TXQwF1Fj1RK-C48ThL0Z-157">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-155" value="给accept返回的fd创建新的channel，同时注册io事件，此时该fd的读写事件处理全部移交给worker处理" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="132.5" y="2872" width="225" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-160" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-157" target="TXQwF1Fj1RK-C48ThL0Z-159">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-157" value="CodecFactory::OnEvent()根据channel设置的协议号执行OnRedisEvent()" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-130" y="2877" width="220" height="62" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-162" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-159" target="TXQwF1Fj1RK-C48ThL0Z-161">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-159" value="循环读取fd，构建redis请求内容，触发CMD_REQ_REDIS_PROXY命令字的处理器" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-145" y="2980" width="250" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-161" value="交给业务代码处理redis命令" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="175" y="2975" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-163" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="340" y="3004.5" as="sourcePoint" />
+            <mxPoint x="420" y="3004.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-164" value="response" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="2975" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-167" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-165" target="TXQwF1Fj1RK-C48ThL0Z-166">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-165" value="Redis Request" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-220" y="3180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-166" value="SessionProxy-&amp;gt;CmdHandle()" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="3180" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
