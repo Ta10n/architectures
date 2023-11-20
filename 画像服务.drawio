@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-20T10:04:48.275Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="3OgMkOTNvcbh54zlUAnA" version="22.1.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-20T11:25:10.562Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="NRksGF9OCCuC-zH_g-l4" version="22.1.2" type="github">
   <diagram name="第 1 页" id="exQQPddznj57JsKQ9eLf">
     <mxGraphModel dx="2261" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -572,17 +572,46 @@
         <mxCell id="TXQwF1Fj1RK-C48ThL0Z-198" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-194" target="TXQwF1Fj1RK-C48ThL0Z-197">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-203" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-194" target="TXQwF1Fj1RK-C48ThL0Z-197">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="TXQwF1Fj1RK-C48ThL0Z-194" value="StepRedisCluster::SendTo()" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="365" y="3195" width="215" height="30" as="geometry" />
         </mxCell>
         <mxCell id="TXQwF1Fj1RK-C48ThL0Z-196" value="系统命令，启动时已经执行过init和emit，获取后端redis集群的节点信息" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="370" y="3170" width="210" as="geometry" />
         </mxCell>
-        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-197" value="通过crc16计算应该请求哪个节点" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="630" y="3180" width="120" height="60" as="geometry" />
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-205" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-197" target="TXQwF1Fj1RK-C48ThL0Z-204">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-197" value="sendClusterCmd获取存储集群节点信息，创建socket，设置读写事件" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="3180" width="150" height="60" as="geometry" />
         </mxCell>
         <mxCell id="TXQwF1Fj1RK-C48ThL0Z-201" value="初始化step时在actor-builder中注册了sequence对应的step类对象，执行step的callback()函数 StepHmget的callback返回客户端响应" style="text;whiteSpace=wrap;fontColor=#FF3333;" vertex="1" parent="1">
           <mxGeometry x="-120" y="3180" width="235" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-207" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-204" target="TXQwF1Fj1RK-C48ThL0Z-206">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-208" value="回调事件处理" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="TXQwF1Fj1RK-C48ThL0Z-207">
+          <mxGeometry x="0.0292" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-204" value="Callback回来以后执行真正的Hmget命令" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="645" y="3080" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-210" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-206" target="TXQwF1Fj1RK-C48ThL0Z-209">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-206" value="通过sequence找到StepHmget，回调callback" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="827" y="3330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-211" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="TXQwF1Fj1RK-C48ThL0Z-209" target="TXQwF1Fj1RK-C48ThL0Z-176">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TXQwF1Fj1RK-C48ThL0Z-209" value="找到client_channel写入响应" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="645" y="3330" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
